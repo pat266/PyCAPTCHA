@@ -2,6 +2,9 @@ from model.model import captcha_model, model_conv, model_resnet
 from data.datamodule import captcha_dm
 from utils.arg_parsers import test_arg_parser
 import pytorch_lightning as pl
+import sys
+
+sys.stdout.reconfigure(encoding='utf-8')
 
 def test(args):
     dm = captcha_dm()

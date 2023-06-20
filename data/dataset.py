@@ -38,7 +38,7 @@ class captcha_dataset(data.Dataset):
     def __getitem__(self, index):
         img_path = os.path.join(self.data_path, self.data_list[index])
         img = self.transform(Image.open(img_path))
-        label = self.data_list[index].split('.')[0].lower()
+        label = self.data_list[index].split('_')[0].lower()
         return img, str_to_vec(label)
 
     def __len__(self):
